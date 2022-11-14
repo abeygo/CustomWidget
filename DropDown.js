@@ -2,13 +2,8 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
 
-    <div id="di-autocomplete-main"
-    class="decisionIncComponentWidgetPanel">
-        <input id="di-autocomplete-widget" class="decisionIncInputField " value="" key="" type="text"
-            placeholder="Enter Text..."
-            style="font-size: 14px; border-color: rgb(191, 191, 191); 
-            background-color: rgb(255, 255, 255);">
-     <table id="myTable">
+    
+ <table id="myTable">
   <tr>
     <td>Row1 cell1</td>
     <td>Row1 cell2</td>
@@ -23,7 +18,7 @@
   </tr>
 </table>
 
-    </div>
+    
 
     <style>
 
