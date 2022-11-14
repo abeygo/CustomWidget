@@ -2,24 +2,225 @@
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
 
-    
- <table id="myTable">
-  <tr>
-    <td>Row1 cell1</td>
-    <td>Row1 cell2</td>
-  </tr>
-  <tr>
-    <td>Row2 cell1</td>
-    <td>Row2 cell2</td>
-  </tr>
-  <tr>
-    <td>Row3 cell1</td>
-    <td>Row3 cell2</td>
-  </tr>
-</table>
+    <div id="di-autocomplete-main"
+    class="decisionIncComponentWidgetPanel">
+        <input id="di-autocomplete-widget" class="decisionIncInputField " value="" key="" type="text"
+            placeholder="Enter Text..."
+            style="font-size: 14px; border-color: rgb(191, 191, 191); 
+            background-color: rgb(255, 255, 255);">
+
+    </div>
+
+    <style>
+
+                    
+            * {
+                box-sizing: border-box;
+            }
+
+            .autocomplete {
+                position: relative;
+                display: inline-block;
+            }
+
+            input {
+
+                text-decoration: none;
+                border-color: rgb(191, 191, 191);
+            }
+
+            input[type=text] {
+                height: 26px;
+                background-color: rgb(255, 255, 255);
+                width: 100%;
+            }
+
+            .autocomplete-items {
+                position: absolute;
+                border: 1px solid rgb(191, 191, 191);
+                height: auto;
+                z-index: 99;
+                left: 0;
+                right: 0;
+                
+            }
+
+            .autocomplete-items div {
+                padding: 5px;
+                cursor: pointer;
+                background-color: #fff;
+                border-top: none;
+            }
+
+            .autocomplete-items div:hover {
+                background-color: rgb(240, 240, 240);
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-touch-callout: none;
+                -webkit-text-size-adjust: none;
+                -ms-text-size-adjust: none;
+            }
+
+
+            .autocomplete-active {
+                background-color: rgb(240, 240, 240) !important;
+                outline: rgb(0, 0, 0) dotted 1px;
+            }
+
+
+            :focus {
+                outline: none;
+            }
+
+            .decisionIncInputField {
+                width: calc(100% - 18px);
+                height: calc(100% - 2px);
+                border: 1px solid #ababab;
+                font-family: "72", Arial, Helvetica, sans-serif;
+                outline: none;
+                padding: 0 .5rem;
+            }
+
+            .decisionIncInputField::-webkit-input-placeholder {
+                color: #757575;
+                font-style: italic;
+                font-weight: 400!important;
+            }
+
+            .decisionIncInputField:-moz-placeholder, .decisionIncInputField::-moz-placeholder {
+                color: #757575;
+                font-style: italic;
+                font-weight: 400!important;
+            }
+
+            .decisionIncInputField:-ms-input-placeholder {
+                color: #757575;
+                font-style: italic;
+                font-weight: 400!important;
+            }
+
+            .decisionIncInputField:hover:not(.decisionIncInputField-designTime):not(.decisionIncInputFieldDisabled):not(.decisionIncInputFieldUneditable) {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #427cac!important;
+            }
+
+            .decisionIncInputField:focus:not(.decisionIncInputField-designTime):not(.decisionIncInputFieldDisabled):not(.decisionIncInputFieldUneditable) {
+                outline: 1px dotted #000;
+                outline-offset: -3px;
+            }
+
+            .decisionIncInputField::-ms-clear {
+                display: none;
+            }
+
+            .decisionIncComponentWidgetPanel {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-sizing: border-box;
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-touch-callout: none;
+                -webkit-text-size-adjust: none;
+                -ms-text-size-adjust: none;
+            }
+
+            :focus {
+                outline: none;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
 
     
 
+
+            input[type=text] {
+                background-color: rgb(255, 255, 255);
+                ;
+                width: 100%;
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-touch-callout: none;
+                -webkit-text-size-adjust: none;
+                -ms-text-size-adjust: none;
+            }
+
+            :focus {
+                outline: none;
+            }
+
+            .di-input-error{
+                border-color: red !important;
+            }
+            .di-input-success{
+                font-weight: bold;
+            }
+
+            .decisionIncInputField {
+                width: calc(100% - 18px);
+                height: calc(100% - 2px);
+                border: 1px solid #ababab;
+                font-family: "72", Arial, Helvetica, sans-serif;
+                outline: none;
+                padding: 0 .5rem;
+            }
+
+            .decisionIncInputField::-webkit-input-placeholder {
+                color: #757575;
+                font-style: italic;
+                font-weight: 400!important;
+            }
+
+            .decisionIncInputField:-moz-placeholder, .decisionIncInputField::-moz-placeholder {
+                color: #757575;
+                font-style: italic;
+                font-weight: 400!important;
+            }
+
+            .decisionIncInputField:-ms-input-placeholder {
+                color: #757575;
+                font-style: italic;
+                font-weight: 400!important;
+            }
+
+            .decisionIncInputField:hover:not(.decisionIncInputField-designTime):not(.decisionIncInputFieldDisabled):not(.decisionIncInputFieldUneditable) {
+                border-width: 1px;
+                border-style: solid;
+                border-color: #427cac!important;
+            }
+
+            .decisionIncInputField:focus:not(.decisionIncInputField-designTime):not(.decisionIncInputFieldDisabled):not(.decisionIncInputFieldUneditable) {
+                outline: 1px dotted #000;
+                outline-offset: -3px;
+            }
+
+            .decisionIncInputField::-ms-clear {
+                display: none;
+            }
+
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-touch-callout: none;
+                -webkit-text-size-adjust: none;
+                -ms-text-size-adjust: none;
+            }
+
+            :focus {
+                outline: none;
+            }
+
+    </style>
     `;
 
     customElements.define('com-sap-decinsioninc-autocomplete1', class DiAutoComplete extends HTMLElement {
@@ -48,6 +249,80 @@
         }
 
 
+        addItem(key, text) {
+            let index = this._keys.indexOf(key);
+            if (index === -1) {
+                this._values.push(text);
+                this._keys.push(key);
+            }
+
+
+        }
+
+        addItemsArr(keysArr, textsArr) {
+
+            for (let i = 0; i < keysArr.length; i++) {
+                let index = this._keys.indexOf(keysArr[i]);
+                if (index === -1) {
+                    this._values.push(textsArr[i]);
+                    this._keys.push(keysArr[i]);
+                }
+            }
+
+        }
+
+        getSelectedKey() {
+            return this._inpField.getAttribute('key');
+        }
+
+        getSelectedText() {
+            return this._inpField.getAttribute('value');
+        }
+
+        getValue() {
+            return this._inpField.value;
+        }
+
+        removeAllItems() {
+            this._values = [];
+            this._keys = [];
+        }
+
+        removeItem(key) {
+
+            let index = this._keys.indexOf(key);
+            if (index >= 0) {
+                this._keys.splice(index, 1);
+                this._values.splice(index, 1);
+            }
+
+        }
+
+        setInputStyle(styleStr) {
+            this._inpField.style = styleStr;
+        }
+
+        setListStyle(styleStr) {
+            this._listStyle = styleStr;
+        }
+
+        setListLimit(limit) {
+            this._listLimit = limit;
+        }
+        setPlaceholder(text) {
+            this._inpField.setAttribute('placeholder', text);
+        }
+
+        setSelectedKey(key) {
+            let index = this._keys.indexOf(key);
+
+            if (index >= 0) {
+                this._inpField.setAttribute('key', key);
+                this._inpField.setAttribute('value', this._values[index]);
+                this._inpField.value = this._values[index];
+            }
+
+        }
 
 
 
