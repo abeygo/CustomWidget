@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "com-sap-decinsioninc-autocomplete1",
-			"url": "https://etcircle.github.io/FreeSACWidgets/DiAutoComplete/webcomponent.js",
+			"url": "https://github.com/abeygo/CustomWidget/blob/main/DropDown.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
