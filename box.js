@@ -34,5 +34,5 @@
             }
         }
     }
-    customElements.define("com-sample-cbox", Box);
+    customElements.define("com-sample-box", Box);
 })();
