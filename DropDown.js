@@ -8,6 +8,30 @@
             placeholder="Enter Text..."
             style="font-size: 14px; border-color: rgb(191, 191, 191); 
             background-color: rgb(255, 255, 255);">
+    </div>
+    <div>
+      <table>
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>height</th>
+                    <th>place</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Monte Falco</td>
+                    <td>1658</td>
+                    <td>Parco Foreste Casentinesi</td>
+                </tr>
+                <tr>
+                    <td>Monte Falterona</td>
+                    <td>1654</td>
+                    <td>Parco Foreste Casentinesi</td>
+                </tr>
+                </tbody>
+      </table>
+		
 
     </div>
 
